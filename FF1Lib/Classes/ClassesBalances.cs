@@ -82,7 +82,7 @@ namespace FF1Lib
 				WhiteMageHarmEveryone();
 			}
 
-			if ((bool)flags.Lockpicking)
+			if (flags.Lockpicking != Lockpicking.None)
 			{
 				EnableLockpicking();
 				SetLockpickingLevel((int)flags.LockpickingLevelRequirement);

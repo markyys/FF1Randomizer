@@ -335,13 +335,16 @@ namespace FF1Lib
 							break;
 						case BonusMalusAction.LockpickingLevel:
 							int newLockPickingLevel = flags.LockpickingLevelRequirement + bonusmalus.StatMod;
-							if ((bool)flags.Lockpicking)
+							if (flags.Lockpicking != Lockpicking.None)
 							{
 								//constrain lp level to 1-50
 								newLockPickingLevel = Math.Max(1, newLockPickingLevel);
 								newLockPickingLevel = Math.Min(50, newLockPickingLevel);
 								rom.SetLockpickingLevel(newLockPickingLevel);
 							}
+							break;
+						case BonusMalusAction.Lockpicking:
+							rom.SetLockpickingClass(i);
 							break;
 						case BonusMalusAction.InnateResist:
 							_classes[i].InnateResist = (byte)bonusmalus.StatMod;
@@ -481,7 +484,7 @@ namespace FF1Lib
 				kiBlursings.Add(new BonusMalus(BonusMalusAction.StartWithKI, "+" + olditemnames[(int)Item.Tail], mod: (int)Item.Tail));
 			}
 
-			if (!(bool)flags.Lockpicking)
+			if (flags.Lockpicking == Lockpicking.None)
 			{
 				kiBlursings.Add(new BonusMalus(BonusMalusAction.StartWithKI, "+" + olditemnames[(int)Item.Key], mod: (int)Item.Key));
 			}

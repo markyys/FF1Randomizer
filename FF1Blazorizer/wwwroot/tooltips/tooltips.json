@@ -1659,7 +1659,8 @@
 		"Id": "RandomizeClassKeyItemsCheckBox",
 		"title": "Blursed Classes - Start with Key Items",
 		"screenshot": "RandomizeClassKeyItemsCheckBox.png",
-		"description": "Each class will start with a different Key Item, separate from the normal count for Bonuses (so they will still each get Key Items when Bonuses is set to 0). This is separate from Incentives, and will only include standard Key Items (such as OXYALE or TNT), not any other incentivized equipment. Characters gained mid-game via recruitment (Party tab) will still come with their appropriate Key Item.\nFree or Removed Key Items aren't included. If Thief Lockpicking is enabled, KEY will be excluded. These Key Items are never included: BRIDGE, SHIP, CANAL, CANOE, FLOATER.\nIn NoOverworld gamemode, the SIGIL and the MARK are included."
+		"description": "Having a thief in the party, when they reach the required level, allows players to open all locked doors. (Selecting level 1 will allow the thief to always unlock doors.)\n\n Enabling this flag also adds a -10 level requirement bonus and a
+ +10 level requirement malus to blursed classes.\n\nThis can be enabled for all Thieves or only for Thieves that receive the 'Lockpicking' class blessing (which will only show up when this option is set to blessed classes)."
 	},
 	{
 		"Id": "EnableRandomPromotions",

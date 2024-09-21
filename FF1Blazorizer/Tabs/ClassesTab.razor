@@ -13,8 +13,8 @@
 			<CheckBox UpdateAction="@UpdateAction" IsEnabled="@(Flags.RandomizeClassMode != ClassRandomizationMode.Transmooglifier)" Id="fixHitChanceCapCheckBox" @bind-Value="Flags.FixHitChanceCap">Raise Hit % Cap</CheckBox>
 			<EnumDropDown UpdateAction="@UpdateAction" IsEnabled="@(Flags.RandomizeClassMode != ClassRandomizationMode.Transmooglifier)" Id="MDefModeDropDown" TItem="MDEFGrowthMode" @bind-Value="Flags.MDefMode">MDEF Growth:</EnumDropDown>
 			<CheckBox UpdateAction="@UpdateAction" Id="WhiteMageHarmEveryoneCheckBox" @bind-Value="Flags.WhiteMageHarmEveryone">Improved HARM for White Mage</CheckBox>
-			<TriStateCheckBox UpdateAction="@UpdateAction" Id="Lockpicking" @bind-Value="Flags.Lockpicking">Thief Lockpicking</TriStateCheckBox>
-			<IntSlider Indent Min="1" Max="50" Step="1" DisableTooltip UpdateAction="@UpdateAction" IsEnabled="Flags.Lockpicking" Id="LockpickingLevelRequirement" @bind-Value="@Flags.LockpickingLevelRequirement">Lockpicking Level Requirement:</IntSlider>
+			<EnumDropDown UpdateAction="@UpdateAction" Id="Lockpicking" @bind-Value="Flags.Lockpicking">Thief Lockpicking</EnumDropDown>
+			<IntSlider Indent Min="1" Max="50" Step="1" DisableTooltip UpdateAction="@UpdateAction" IsEnabled="Flags.Lockpicking !- Lockpicking.None" Id="LockpickingLevelRequirement" @bind-Value="@Flags.LockpickingLevelRequirement">Lockpicking Level Requirement:</IntSlider>
 			<TriStateCheckBox UpdateAction="@UpdateAction" Id="ReducedLuckCheckBox" @bind-Value="Flags.ReducedLuck">Reduced Luck</TriStateCheckBox>
 
 			<div class="checkbox-cell"></div>

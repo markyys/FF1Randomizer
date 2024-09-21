@@ -358,12 +358,16 @@ namespace FF1Lib
 			}
 
 			// Add Lockpicking Bonus/Malus
-			if ((bool)flags.Lockpicking && flags.LockpickingLevelRequirement < 50)
+			if (flags.Lockpicking == Lockpicking.Blursed) {
+				new BonusMalus(BonusMalusAction.Lockpicking, "Lockpicking", Classes: new List<Classes> { Classes.Thief });
+			}
+
+			if (flags.Lockpicking != Lockpicking.None && flags.LockpickingLevelRequirement < 50)
 			{
 				maluses.Add(new BonusMalus(BonusMalusAction.LockpickingLevel, "LateLockpik", mod: 10, Classes: new List<Classes> { Classes.Thief }));
 			}
 
-			if ((bool)flags.Lockpicking && flags.LockpickingLevelRequirement > 1)
+			if (flags.Lockpicking != Lockpicking.None && flags.LockpickingLevelRequirement > 1)
 			{
 				highTier.Add(new BonusMalus(BonusMalusAction.LockpickingLevel, "EarlyLokpik", mod: -10, Classes: new List<Classes> { Classes.Thief }));
 			}

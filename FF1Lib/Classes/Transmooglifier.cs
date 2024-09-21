@@ -82,7 +82,7 @@ namespace FF1Lib
 			if ((bool)flags.GuaranteeCustomClassComposition)
 				classes = ClassesGuaranteed(classes);
 
-			if ((bool)flags.Lockpicking)
+			if (flags.Lockpicking != Lockpicking.None)
 				ChooseLockpickingClass(classes);
 
 			if ((bool)flags.WhiteMageHarmEveryone)

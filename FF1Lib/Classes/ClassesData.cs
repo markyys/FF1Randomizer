@@ -73,6 +73,15 @@ namespace FF1Lib
 		Chaos
 	}
 
+	public enum Lockpicking
+		[Description("None")]
+		None = 0,
+		[Description("Thief")]
+		Thief,
+		[Description("Blessed Thief Only")]
+		Blursed
+	}
+
 	public enum BonusMalusAction
 	{
 		None = 0,
@@ -129,6 +138,7 @@ namespace FF1Lib
 		MasaCurse,
 		RibbonCurse,
 		DualWieldKnife,
+		Lockpicking,
 	}
 
 	public partial class GameClasses
